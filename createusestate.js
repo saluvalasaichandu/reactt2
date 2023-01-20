@@ -10,14 +10,22 @@ const ExpenseItem = (props) => {
     setTitle("updated")
     console.log(title)
   };
+  const [amount,setamount]=useState(props.amount)
+
+  const changeamount=()=>{
+    setamount("100")
+    console.log(amount)
+  }
+
   return (
     <Card className='expense-item'>
       <ExpenseDate date={props.date} />
       <div className='expense-item__description'>
         <h2>{title}</h2>
-        <div className='expense-item__price'>${props.amount}</div>
+        <div className='expense-item__price'>${amount}</div>
       </div>
-      <button onClick={clickhandler}>title changed</button>
+      <button onClick={clickhandler}>Expense Deleted</button>
+      <button onClick={changeamount}>expenseamount</button>
     </Card>
   );
 }
